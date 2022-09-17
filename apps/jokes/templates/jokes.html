@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title %} Jokes {% endblock %}
+{% block content %}
+<div class="alert alert-danger text-center visually-hidden" role="alert" id="alert-session">
+    The sesion has expired please authenticate again
+</div>
+<div class="row d-flex justify-content-center mt-5" id="loading-group">
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+    <div class="spinner-grow text-primary mx-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+    </div>
+</div>
+
+<div class="row visually-hidden" id="content">
+    <div class="col-6">
+        <div class="d-flex justify-content-center">
+            <h5>Get Jokes</h5>
+        </div>
+        <div class="d-flex justify-content-center my-3">
+            <button type="button" class="btn btn-primary px-5" id='btn-get-joke' onclick="get_joke()">Get
+                joke</button>
+        </div>
+        
+
+        <div class="card mb-3" >
+            <div class="row g-0 my-3 mx-2">
+                <div class="col-md-4">
+                    <img src="{% static 'media/images/icon-card.png'%}" class="img-fluid" alt="..." id="joke-img">
+                </div>
+                
+                <div class="col-md-8" >
+                    <div class="d-flex justify-content-center visually-hidden pt-5" id="status">
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                    <div class="card-body " id="card">
+                        <p class="card-text" id="joke-text"></p>
+                        <p class="card-text text-end"><small class="text-muted" id="joke-id"></small></p>
+                        <div class="d-grid gap-2">
+                            <button class="btn  btn-warning text-white fw-bolder" id="btn-save" onclick='create_joke()'>
+                                <span class="spinner-border spinner-border-sm visually-hidden" id="loading"
+                                    role="status" aria-hidden="true"> </span>
+                                Save favorite
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-danger text-center visually-hidden" role="alert" id="alert">
+        </div>
+    </div>
+    <div class="col-6">
+        <h5 class="text-center">My Jokes</h5>
+        <ol class="list-group " id="list-jokes">
+            <!-- {%for joke in data.data %}
+            <li class='list-group-item d-flex justify-content-between align-items-start align-middle'>
+                <div class='ms-2 me-auto'> 
+                {{joke.joke}}
+                </div>
+            </li>
+            {% endfor %} -->
+        </ol>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{%block js%}
+<script src="{% static 'jokes/js/functions.js' %} "></script>
+
+{%endblock%}
