@@ -23,20 +23,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fst-italic">
         <div class="container">
             <span class="navbar-text fw-bolder" id="registered-mail">
-                
             </span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end"  id="navbarNav">
-                <ul class="nav nav-pills fw-bolder">
-                    <li class="nav-item" id='link-logout'>
-                        <a class=" btn btn-primary px-5" aria-current="page" href="{% url 'user:login'%}" id="btn-logout">Sign in</a>
-                    </li>
-                    
-                </ul>
-            </div>
+            <ul class="nav nav-pills fw-bolder justify-content-end">
+                <li class="nav-item" id='link-logout'>
+                    <a class=" btn btn-primary px-5" aria-current="page" href="{% url 'user:login'%}" id="btn-logout">Sign in</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="container pt-3 fst-italic">

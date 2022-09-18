@@ -5,10 +5,10 @@
 
 <div class="card mt-5 shadow rounded p-3 bg-body">
 	<div class="row g-0 d-flex align-items-center">
-		<div class="col-5">
+		<div class="col-4  col-sm-5">
 			<img src="{%static 'media/images/image-login.jpg' %}" class="img-fluid rounded" alt="...">
 		</div>
-		<div class="col-7">
+		<div class="col-8 col-sm-7 ">
 			<div class="card-body">
 				<h3 class="card-title text-center mb-3">Sign in</h3>
 				<form method="POST" action="{% url 'user:login' %}" id='form-login' > 
@@ -24,7 +24,13 @@
 					<div class="alert alert-danger text-center visually-hidden" role="alert" id="alert">
 						Wrong email or password.
 					</div>
-					<div class="hstack gap-3 col-7 mx-auto">
+					<div class= "d-flex justify-content-center" >
+						<button class="btn btn-primary" type="submit" id="btn-login">
+							<span class="spinner-border spinner-border-sm visually-hidden" id='loading' role="status" aria-hidden="true"></span>
+							Sign in
+						</button>
+					</div
+					{% comment %} <div class="hstack gap-3 col-7 mx-auto">
 						<button class="btn btn-primary" type="submit" id="btn-login">
 							<span class="spinner-border spinner-border-sm visually-hidden" id='loading' role="status" aria-hidden="true"></span>
 							Sign in
@@ -33,10 +39,10 @@
 						<button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modal-create">
 							<i class="bi bi-x-lg " ></i> Register
 						</button>
-					</div>
+					</div> {% endcomment %}
 				</form>
 			</div>
-		</div>.
+		</div>
 	</div>
 
 </div>
